@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+// import ""
 function Login() {
     const [uid, setuid] = useState('');
     const [password, setPassword] = useState('');
@@ -78,15 +78,15 @@ function Login() {
                         <div className="loginType my-3">
                             <div className="form-check form-check-inline">
                                 <input className="form-check-input" type="radio" name="loginOptions" id="inlineRadio1" value="student" />
-                                <label className="form-check-label" for="inlineRadio1">Student</label>
+                                <label className="form-check-label" htmlFor="inlineRadio1">Student</label>
                             </div>
                             <div className="form-check form-check-inline">
                                 <input className="form-check-input" type="radio" name="loginOptions" id="inlineRadio2" value="teacher" />
-                                <label className="form-check-label" for="inlineRadio2">Teacher</label>
+                                <label className="form-check-label" htmlFor="inlineRadio2">Teacher</label>
                             </div>
                             <div className="form-check form-check-inline">
                                 <input className="form-check-input" type="radio" name="loginOptions" id="inlineRadio3" value="admin" />
-                                <label className="form-check-label" for="inlineRadio3">Admin</label>
+                                <label className="form-check-label" htmlFor="inlineRadio3">Admin</label>
                             </div>
                         </div>
                         

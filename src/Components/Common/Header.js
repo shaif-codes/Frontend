@@ -5,7 +5,7 @@ import './headerStyle.css';
 const Header = (props) => {
 
     
-    const [isActive, setIsActive] = useState('bi-x');
+    const [isActive, setIsActive] = useState('bi-list');
 
     const handleClick = () => {
         isActive === "bi-x"? setIsActive("bi-list") : setIsActive("bi-x")
@@ -34,11 +34,13 @@ const Header = (props) => {
                         <img src="assets/img/profile-img.jpg" alt="" className="img-fluid rounded-circle" />
                         <h1 className="text-light"><Link to="/">{props.userDetails?.name}</Link></h1>
                         <div className="social-links mt-3 text-center">
-                            <a href="/" className="github"><i className="bx bxl-github"></i></a>
-                            <a href="/" className="facebook"><i className="bx bxl-facebook"></i></a>
+                            <a href="/" className="github" title='github handle'><i className="bx bxl-github"></i></a>
+                            <a href="/" className="facebook" title='facebook handle'><i className="bx bxl-facebook"></i></a>
                             {/* <a href="/" className="instagram"><i className="bx bxl-instagram"></i></a>
                             <a href="/" className="google-plus"><i className="bx bxl-skype"></i></a> */}
-                            <a href="/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                            <a href="/" className="linkedin" title='linkedin handle'><i className="bx bxl-linkedin"></i></a>
+                            <a href="/" className="linkedin" title='logout'><i className='bx bx-log-out'></i></a>
+
                         </div>
                     </div>
 
@@ -51,7 +53,7 @@ const Header = (props) => {
                             <li><Link to="#services" className="nav-link scrollto"><i className="bx bx-server"></i> <span>Services</span></Link></li>
                             <li><Link to="#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></Link></li> */}
                             
-                                {props.links.map((link, index) => (
+                                {props.links?.map((link, index) => (
                                     <li key={index}>
                                         <Link to={link.to} className="nav-link scrollto">
                                             <i className={link.icon}></i>
@@ -64,7 +66,7 @@ const Header = (props) => {
                 </div>
             </header>
 
-            <main id="main">
+            {/* <main id="main">
                 <section className="breadcrumbs">
                     <div className="container">
                         <div className="d-flex justify-content-between align-items-center">
@@ -82,7 +84,7 @@ const Header = (props) => {
                         <p>Example inner page template</p>
                     </div>
                 </section>
-            </main>
+            </main> */}
 
             {/* <footer id="footer">
                 <div className="container">
