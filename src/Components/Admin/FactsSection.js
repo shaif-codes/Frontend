@@ -30,7 +30,7 @@ const FactsSection = () => {
     }, [studentCount, teacherCount]);
 
     return (
-        <section id="info" className="info">
+        <section id="info" className="info" style={{width: "75vw", marginLeft: "270px"}}>
             <div className="container">
                 <div className="row">
                     {/* Student Count Box */}

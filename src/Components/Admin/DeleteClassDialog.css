@@ -1,0 +1,38 @@
+/* DeleteClassDialog.css */
+
+.delete-class-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.delete-class-dialog-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.delete-class-dialog h3 {
+    margin-top: 0;
+}
+
+.delete-class-dialog p {
+    margin-bottom: 20px;
+}
+
+.delete-class-dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-class-dialog-buttons button {
+    margin-left: 10px;
+}

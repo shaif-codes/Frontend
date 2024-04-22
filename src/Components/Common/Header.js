@@ -4,21 +4,21 @@ import './headerStyle.css';
 
 const Header = (props) => {
 
-    
+
     const [isActive, setIsActive] = useState('bi-list');
 
     const handleClick = () => {
-        isActive === "bi-x"? setIsActive("bi-list") : setIsActive("bi-x")
+        isActive === "bi-x" ? setIsActive("bi-list") : setIsActive("bi-x")
         const body = document.body
-        if(body.className === ""){
+        if (body.className === "") {
             body.className = "mobile-nav-active"
         }
-        else{
+        else {
             body.className = ""
         }
     };
 
-    
+
 
     return (
         <div>
@@ -52,15 +52,15 @@ const Header = (props) => {
                             <li><Link to="#portfolio" className="nav-link scrollto"><i className="bx bx-book-content"></i> <span>Portfolio</span></Link></li>
                             <li><Link to="#services" className="nav-link scrollto"><i className="bx bx-server"></i> <span>Services</span></Link></li>
                             <li><Link to="#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></Link></li> */}
-                            
-                                {props.links?.map((link, index) => (
-                                    <li key={index}>
-                                        <Link to={link.to} className="nav-link scrollto">
-                                            <i className={link.icon}></i>
-                                            <span>{link.text}</span>
-                                        </Link>
-                                    </li>
-                                ))}
+
+                            {props.links?.map((link, index) => (
+                                <li key={index}>
+                                    <Link to={link.to} className="nav-link scrollto">
+                                        <i className={link.icon}></i>
+                                        <span>{link.text}</span>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </nav>
                 </div>

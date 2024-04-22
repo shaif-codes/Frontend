@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import ""
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons from react-icons library
+
 function Login() {
-    const [uid, setuid] = useState('');
+    const [uid, setUid] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
@@ -13,7 +15,7 @@ function Login() {
         const formdata = new FormData(document.getElementById("loginForm"))
         const loginOption = formdata.loginOptions
 
-        const dataToSend = { uid, password, loginOption};
+        const dataToSend = { uid, password, loginOption };
         console.log(dataToSend)
 
         try {
@@ -30,7 +32,7 @@ function Login() {
             }
 
             const responseData = await response.json();
-
+            console.log(responseData)
             if (responseData.message === "Login Success") {
                 navigate('/home', { state: { student: responseData.student } });
             } else {
@@ -57,23 +59,34 @@ function Login() {
                                 id="uid"
                                 placeholder="Enter Registration Number"
                                 value={uid}
-                                onChange={(e) => setuid(e.target.value)}
+                                onChange={(e) => setUid(e.target.value)}
                                 required
                                 autoComplete='registration-number'
                             />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="password"
-                                placeholder="Enter password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                                autoComplete='password'
-                            />
+                            <div className="input-group">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    className="form-control"
+                                    id="password"
+                                    placeholder="Enter password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                    autoComplete='password'
+                                />
+                                <div className="input-group-append">
+                                    <button
+                                        className="btn btn-outline-primary "
+                                        type="button"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div className="loginType my-3">
                             <div className="form-check form-check-inline">
@@ -89,7 +102,7 @@ function Login() {
                                 <label className="form-check-label" htmlFor="inlineRadio3">Admin</label>
                             </div>
                         </div>
-                        
+
                         <button type="submit" className="btn btn-primary btn-block mt-4">Login</button>
                     </form>
                 </div>

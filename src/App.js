@@ -6,6 +6,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import StudentDashboard from './Components/Student/StudentDashboard';
 import TeacherDashboard from './Components/Teacher/TeacherDashboard';
 import FactsSection from './Components/Admin/FactsSection';
+import GraphsSection from './Components/Admin/GraphSection';
+import ClassesPage from './Components/Admin/ClassesPage';
 // import Header from './Components/Navigation/Header';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <Route path="/student" element = {<StudentDashboard/>}/>
       <Route path="/teacher" element = {<TeacherDashboard/>}/>
       <Route path="/facts" element = {<FactsSection/>}/>
+      <Route path="/graph" element = {<GraphsSection/>}/>
+      <Route path="/class" element = {<ClassesPage/>}/>
       </Routes>
       </div>
     </BrowserRouter>
