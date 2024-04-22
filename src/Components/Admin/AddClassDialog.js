@@ -12,7 +12,8 @@ const AddClassDialog = ({ onAddClass, setToggleDialog }) => {
         setShowDialog(!showDialog);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         const newClass = {
             name: className,
             teacher: teacherName,
@@ -20,13 +21,16 @@ const AddClassDialog = ({ onAddClass, setToggleDialog }) => {
             startDate: startDate
         };
         onAddClass(newClass);
-        setShowDialog(false);
+        // setShowDialog(false);
         // Reset form fields
-        setClassName('');
-        setTeacherName('');
-        setClassType('');
-        setStartDate('');
+        // setClassName('');
+        // setTeacherName('');
+        // setClassType('');
+        // setStartDate('');
+        setToggleDialog(false)
     };
+    
+    
 
     return (
         <>

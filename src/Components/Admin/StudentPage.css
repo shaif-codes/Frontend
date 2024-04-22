@@ -1,0 +1,24 @@
+body {
+    overflow-x: hidden;
+}
+
+.student-page-container {
+    margin-left: 300px;
+    margin-top: 40px;
+    /* overflow: hidden; */
+    /* Adjust the top margin as needed to leave space for the navbar */
+}
+
+.class-card {
+    flex: 1;
+    margin: 5px;
+    max-width: calc(85% - 20px);
+    /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+    .student-page-container {
+        margin-left: 10px;
+        /* Reset margin-top for mobile view */
+    }
+}

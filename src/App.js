@@ -8,6 +8,7 @@ import TeacherDashboard from './Components/Teacher/TeacherDashboard';
 import FactsSection from './Components/Admin/FactsSection';
 import GraphsSection from './Components/Admin/GraphSection';
 import ClassesPage from './Components/Admin/ClassesPage';
+import StudentPage from './Components/Admin/Studentpage';
 // import Header from './Components/Navigation/Header';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/facts" element = {<FactsSection/>}/>
       <Route path="/graph" element = {<GraphsSection/>}/>
       <Route path="/class" element = {<ClassesPage/>}/>
+      <Route path="/students" element = {<StudentPage/>}/>
       </Routes>
       </div>
     </BrowserRouter>

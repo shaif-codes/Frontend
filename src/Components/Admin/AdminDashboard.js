@@ -6,9 +6,9 @@ import GraphsSection from "./GraphSection";
 
 const AdminDashboard = () => {
     const adminLinks = [
-        { to: "#dashboard", icon: "bx bxs-dashboard", text: "Dashboard" },
+        { to: "#dashboard", icon: "bx bxs-dashboard", text: "Dashboard", current: true },
         { to: "/class", icon: "bx bx-book-reader", text: "Classes" },
-        { to: "#students", icon: "bx bx-user", text: "Students" },
+        { to: "/students", icon: "bx bx-user", text: "Students" },
         // Add more links as needed
     ];
     return (

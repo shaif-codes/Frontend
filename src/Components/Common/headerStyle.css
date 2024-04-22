@@ -24,7 +24,9 @@ a[title]::after {
     transition: opacity 0.3s ease;
     /* Add transition for smooth appearance */
 }
-
+.acitve{
+    color: #149ddd
+}
 a:hover[title]::after {
     opacity: 1;
     /* Show tooltip on hover */
