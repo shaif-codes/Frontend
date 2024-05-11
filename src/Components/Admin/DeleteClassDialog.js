@@ -6,7 +6,7 @@ const DeleteClassDialog = ({ className, classId, handleDelete }) => {
         <div className="delete-class-dialog">
             <div className="delete-class-dialog-content">
                 <h3>Delete Class</h3>
-                <p>Are you sure you want to delete the class "{className}"?</p>
+                <p>Are you sure you want to delete the class "{classId}: {className}"?</p>
                 <div className="btn-group">
                     <button className="btn btn-danger" onClick={() => handleDelete(true)}>Confirm</button>
                     <button className="btn btn-secondary" onClick={() => handleDelete(false)}>Cancel</button>

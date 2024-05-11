@@ -13,7 +13,8 @@ function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
         const formdata = new FormData(document.getElementById("loginForm"))
-        const loginOption = formdata.loginOptions
+        const loginOption = formdata.get("loginOptions");
+        console.log(loginOption)
 
         const dataToSend = { uid, password, loginOption };
         console.log(dataToSend)
@@ -33,8 +34,12 @@ function Login() {
 
             const responseData = await response.json();
             console.log(responseData)
-            if (responseData.message === "Login Success") {
-                navigate('/home', { state: { student: responseData.student } });
+            
+            if (responseData.message === "Login Success") {   
+                if(loginOption === 'admin') navigate('/admin', { state: { admin: responseData.admin } });
+                else if(loginOption === 'teacher') navigate('/teacher', { state: { teacher: responseData.teacher } });
+                else if(loginOption === 'student') navigate('/student', { state: { student: responseData.student } });
+                // navigate('/home', { state: { student: responseData.student } });
             } else {
                 setError("Invalid credentials");
             }
