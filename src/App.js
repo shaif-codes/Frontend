@@ -19,10 +19,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/admin" element={<AdminDashBoard />} />
-          <Route path="/student" element={<StudentDashboard />} />
+          <Route path="/student" element={<StudentDashboard /> } />
           <Route path="/teacher" element={<TeacherDashboard />} />
           <Route path="/facts" element={<FactsSection />} />
           <Route path="/graph" element={<GraphsSection />} />
