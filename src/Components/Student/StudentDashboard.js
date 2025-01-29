@@ -3,11 +3,16 @@ import Header from '../Common/Header';
 import { useLocation } from 'react-router-dom';
 
 const StudentDashboard = () => {
-    // Dummy data for navigation links
-    const {student} = useLocation().state;
+    const location = useLocation();
+    const student = location.state?.student;
+
+    if (!student) {
+        return <div>No student data available</div>;
+    }
+
     const [details] = student;
     console.log(student);
-    console.log(student.name)
+    console.log(student.name);
     
     const studentName = details.name;
     const studentUid = details.uid;
